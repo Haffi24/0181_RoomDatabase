@@ -7,8 +7,6 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.a0181_roomdatabase.repositori.RepositoriSiswa
-import com.example.a0181_roomdatabase.repositori.OfflineRepositoriSiswa
-import com.example.a0181_roomdatabase.repositori.OfflineRepositoriSiswa.view.route.DestinasiEditSiswa
 import com.example.a0181_roomdatabase.view.route.DestinasiEditSiswa
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
@@ -29,7 +27,7 @@ class EditViewModel (
             uiStateSiswa = repositoriSiswa.getSiswaStream(idSiswa)
                 .filterNotNull()
                 .first()
-                .toUIStateSiswa(true)
+                .toUiStateSiswa(true)
         }
     }
 
