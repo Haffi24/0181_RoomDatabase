@@ -1,9 +1,11 @@
 package com.example.a0181_roomdatabase.room
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -13,4 +15,16 @@ interface SiswaDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(siswa: Siswa)
+
+    //Edit : Tambah 3 fungsi
+    @Query("Select * from tblSiswa where id = :id")
+    fun getSiswa(id : Int) : Flow<Siswa>
+
+    @Delete
+    suspend fun delete (siswa : siswa)
+
+    @Update
+    suspend fun update(siswa : Siswa)
+
+
 }
