@@ -18,7 +18,7 @@ class DetailViewModel(
 
     private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiEditSiswa.itemIdArg])
 
-    val uiDetailViewModel: StateFlow<UIStateSiswa> =
+    val uiDetailState: StateFlow<UIStateSiswa> =
         repositoriSiswa.getSiswaStream(idSiswa)
             .filterNotNull()
             .map {
@@ -30,7 +30,10 @@ class DetailViewModel(
             )
 
     suspend fun deleteSiswa() {
-        repositoriSiswa.deleteSiswa(uiDetailViewModel.value.detailSiswa.toSiswa())
+        repositoriSiswa.deleteSiswa(uiDetailState.value.detailSiswa.toSiswa())
     }
 
- 
+    companion object {
+        private const val TIMEOUT_MILLIS = 5_000L
+    }
+}
