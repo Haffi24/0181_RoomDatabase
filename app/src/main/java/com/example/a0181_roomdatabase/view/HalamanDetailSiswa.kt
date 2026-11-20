@@ -38,7 +38,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.a0181_roomdatabase.R
 import com.example.a0181_roomdatabase.room.Siswa
 import com.example.a0181_roomdatabase.uicontroller.SiswaTopAppBar
-import com.example.a0181_roomdatabase.view.route.DesitinasiDetailSiswa
+import com.example.a0181_roomdatabase.view.route.DestinasiDetailSiswa
 import com.example.a0181_roomdatabase.viewmodel.DetailViewModel
 import com.example.a0181_roomdatabase.viewmodel.PenyediaViewModel
 import com.example.a0181_roomdatabase.viewmodel.UIStateSiswa
@@ -56,7 +56,7 @@ fun DetailSiswaScreen(
     Scaffold(
         topBar = {
             SiswaTopAppBar(
-                title = stringResource(DesitinasiDetailSiswa.titleRes),
+                title = stringResource(DestinasiDetailSiswa.titleRes),
                 canNavigateBack = true,
                 navigateUp = navigateBack
             )
