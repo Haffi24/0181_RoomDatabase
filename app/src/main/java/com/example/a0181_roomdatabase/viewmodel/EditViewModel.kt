@@ -7,8 +7,9 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.a0181_roomdatabase.repositori.RepositoriSiswa
-import com.example.roomdb.repositori.RepositoriSiswa
-import com.example.roomdb.view.route.DestinasiEditSiswa
+import com.example.a0181_roomdatabase.repositori.OfflineRepositoriSiswa
+import com.example.a0181_roomdatabase.repositori.OfflineRepositoriSiswa.view.route.DestinasiEditSiswa
+import com.example.a0181_roomdatabase.view.route.DestinasiEditSiswa
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -32,3 +33,20 @@ class EditViewModel (
         }
     }
 
+    fun updateUiState(detailSiswa: DetailSiswa) {
+        uiStateSiswa =
+            UIStateSiswa(detailSiswa = detailSiswa, isEntryValid = validasiInput(detailSiswa))
+    }
+
+    private fun validasiInput(uiState: DetailSiswa = uiStateSiswa.detailSiswa): Boolean {
+        return with(uiState) {
+            nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
+        }
+    }
+
+    suspend fun updateSiswa() {
+        if (validasiInput(uiStateSiswa.detailSiswa)) {
+            repositoriSiswa.updateSiswa(uiStateSiswa.detailSiswa.toSiswa())
+        }
+    }
+}
