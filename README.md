@@ -9,3 +9,10 @@
 <img width="435" height="942" alt="Screenshot 2026-11-13 194217" src="https://github.com/user-attachments/assets/25071ae9-c0d6-43d9-b019-0595be0bf156" />
 
 
+<h2>SS Emulator Android Hapus Data</h2>
+<img width="351" height="732" alt="image" src="https://github.com/user-attachments/assets/97363c8e-1a4f-4743-bf01-08cfe9a4797f" />
+
+<h2>SS Emulator Android Konfirmasi Hapus Data</h2>
+<img width="356" height="731" alt="image" src="https://github.com/user-attachments/assets/0d70c460-2e06-40e4-90c1-bcb47e0177bf" />
+
+
