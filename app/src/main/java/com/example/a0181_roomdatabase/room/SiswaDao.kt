@@ -18,7 +18,7 @@ interface SiswaDao {
 
     //Edit : Tambah 3 fungsi
     @Query("Select * from tblSiswa where id = :id")
-    fun getSiswa(id : Int) : Flow<Siswa>
+    fun getSiswa(id : Int) : Flow<Siswa?>
 
     @Delete
     suspend fun delete (siswa : Siswa)
